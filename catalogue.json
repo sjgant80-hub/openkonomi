@@ -1,0 +1,1171 @@
+{
+ "generated_from": "estate-index.json",
+ "totals": {
+  "indexed": 1621,
+  "organs": 104,
+  "live_unclassified": 286,
+  "undescribed": 12
+ },
+ "rooms": [
+  {
+   "id": "trust",
+   "name": "Trust & identity",
+   "why": "Proving who an agent is and that its work is real.",
+   "caps": {
+    "filesystem": "read"
+   },
+   "count": 11
+  },
+  {
+   "id": "rooms",
+   "name": "Agent rooms",
+   "why": "More than one agent working together, and the conductor that runs them.",
+   "caps": {
+    "skill_invoke": "write",
+    "network": "read"
+   },
+   "count": 18
+  },
+  {
+   "id": "memory",
+   "name": "Memory & recall",
+   "why": "What the agent remembers, and what it is allowed to forget.",
+   "caps": {
+    "filesystem": "write"
+   },
+   "count": 27
+  },
+  {
+   "id": "models",
+   "name": "Models & routing",
+   "why": "Which brain answers, local first, cloud only if you say so.",
+   "caps": {
+    "network": "read"
+   },
+   "count": 7
+  },
+  {
+   "id": "market",
+   "name": "Markets & registries",
+   "why": "Where tools are listed — and where they are refused.",
+   "caps": {
+    "network": "read"
+   },
+   "count": 13
+  },
+  {
+   "id": "social",
+   "name": "Talking to people",
+   "why": "Mail, feeds and posts — the parts that reach other humans.",
+   "caps": {
+    "network": "write"
+   },
+   "count": 7
+  },
+  {
+   "id": "clinics",
+   "name": "Clinics & practices",
+   "why": "Ready-made setups for a real business, not a demo.",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   },
+   "count": 21
+  }
+ ],
+ "organs": [
+  {
+   "name": "acg-assessor",
+   "room": "trust",
+   "description": "The Assessor — deterministic rubric assessment for AI-assisted codebases. Same repository, same verdict, same hash.",
+   "url": "https://sjgant80-hub.github.io/acg-assessor/",
+   "repo": "https://sjgant80-hub.github.io/acg-assessor/",
+   "caps": {
+    "filesystem": "read"
+   }
+  },
+  {
+   "name": "earned",
+   "room": "trust",
+   "description": "Proof-of-work hiring: you cannot claim a skill, only demonstrate it. A self-graded lie dies on re-grade, because the artifact is pinned and the grader is canonical. Skills are derived, never asserted.",
+   "url": "https://sjgant80-hub.github.io/earned/",
+   "repo": "https://sjgant80-hub.github.io/earned/",
+   "caps": {
+    "filesystem": "read"
+   }
+  },
+  {
+   "name": "fallhardened",
+   "room": "trust",
+   "description": "The estate's shared hardened primitives — the one correct impl of what the audits kept re-deriving wrong. Zero deps.",
+   "url": "https://sjgant80-hub.github.io/fallhardened/",
+   "repo": "https://sjgant80-hub.github.io/fallhardened/",
+   "caps": {
+    "filesystem": "read"
+   }
+  },
+  {
+   "name": "fallsecurity",
+   "room": "trust",
+   "description": "FallCube · sovereign AI security as geometry · 8+1 vertex architecture · defeats gradient injection · WebLLM in-browser demo",
+   "url": "https://sjgant80-hub.github.io/fallsecurity/",
+   "repo": "https://sjgant80-hub.github.io/fallsecurity/",
+   "caps": {
+    "filesystem": "read"
+   }
+  },
+  {
+   "name": "fallshield",
+   "room": "trust",
+   "description": "Sovereign Ed25519 identity · prove it's really you · WebCrypto · MIT · ◊·κ=1 · prime 283",
+   "url": "https://sjgant80-hub.github.io/fallshield/",
+   "repo": "https://sjgant80-hub.github.io/fallshield/",
+   "caps": {
+    "filesystem": "read"
+   }
+  },
+  {
+   "name": "fallsignature",
+   "room": "trust",
+   "description": "Sovereign Ed25519 content signing + verification · runs locally · nothing leaves your browser",
+   "url": "https://sjgant80-hub.github.io/fallsignature/",
+   "repo": "https://sjgant80-hub.github.io/fallsignature/",
+   "caps": {
+    "filesystem": "read"
+   }
+  },
+  {
+   "name": "falltrust",
+   "room": "trust",
+   "description": "Web-of-trust attestations · signed vouches about identities · transitive trust scoring · sovereign",
+   "url": "https://sjgant80-hub.github.io/falltrust/",
+   "repo": "https://sjgant80-hub.github.io/falltrust/",
+   "caps": {
+    "filesystem": "read"
+   }
+  },
+  {
+   "name": "konomi-signer",
+   "room": "trust",
+   "description": "Sovereign Ed25519 trial signer · imported by every estate product's forge.html · key stays on laptop · MIT · ◊·κ=1",
+   "url": "https://sjgant80-hub.github.io/konomi-signer/",
+   "repo": "https://sjgant80-hub.github.io/konomi-signer/",
+   "caps": {
+    "filesystem": "read"
+   }
+  },
+  {
+   "name": "ring-assessor",
+   "room": "trust",
+   "description": null,
+   "url": "https://sjgant80-hub.github.io/ring-assessor/",
+   "repo": "https://sjgant80-hub.github.io/ring-assessor/",
+   "caps": {
+    "filesystem": "read"
+   }
+  },
+  {
+   "name": "the-wallet",
+   "room": "trust",
+   "description": "A sovereign agent wallet: an Ed25519 identity that is a capability plus a budget it cannot cross, with fork lineage. Runaway spend becomes impossible by construction rather than by policy.",
+   "url": "https://sjgant80-hub.github.io/the-wallet/",
+   "repo": "https://sjgant80-hub.github.io/the-wallet/",
+   "caps": {
+    "filesystem": "read"
+   }
+  },
+  {
+   "name": "witness",
+   "room": "trust",
+   "description": "Deterministic build gate: mutation + fuzz. Catches test-theatre and throw-on-malformed with no LLM, zero deps.",
+   "url": "https://sjgant80-hub.github.io/witness/",
+   "repo": "https://sjgant80-hub.github.io/witness/",
+   "caps": {
+    "filesystem": "read"
+   }
+  },
+  {
+   "name": "ACG-Ballroom",
+   "room": "rooms",
+   "description": "ACG Ballroom - The floor is yours.",
+   "url": "https://sjgant80-hub.github.io/ACG-Ballroom/",
+   "repo": "https://sjgant80-hub.github.io/ACG-Ballroom/",
+   "caps": {
+    "skill_invoke": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "didy",
+   "room": "rooms",
+   "description": "Didy — the trainable conductor of fall-os. One control loop over your own models, local-first: a request can never reach a tier you have not allowed. Mutation-gated.",
+   "url": "https://sjgant80-hub.github.io/didy/",
+   "repo": "https://sjgant80-hub.github.io/didy/",
+   "caps": {
+    "skill_invoke": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fall127agents",
+   "room": "rooms",
+   "description": "Ai the right way",
+   "url": "https://sjgant80-hub.github.io/fall127agents/",
+   "repo": "https://sjgant80-hub.github.io/fall127agents/",
+   "caps": {
+    "skill_invoke": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallcolony",
+   "room": "rooms",
+   "description": "Agent-native settlement · AI agents work, talk, learn Konomi, upgrade themselves · KCC provenance-royalty ledger · MIT",
+   "url": "https://sjgant80-hub.github.io/fallcolony/",
+   "repo": "https://sjgant80-hub.github.io/fallcolony/",
+   "caps": {
+    "skill_invoke": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallherd",
+   "room": "rooms",
+   "description": "Load-balancer-free request routing by golden-angle placement: even distribution with no coordinator and no thundering herd.",
+   "url": "https://sjgant80-hub.github.io/fallherd/",
+   "repo": "https://sjgant80-hub.github.io/fallherd/",
+   "caps": {
+    "skill_invoke": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallmesh",
+   "room": "rooms",
+   "description": null,
+   "url": "https://sjgant80-hub.github.io/fallmesh/",
+   "repo": "https://sjgant80-hub.github.io/fallmesh/",
+   "caps": {
+    "skill_invoke": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallseed-agents",
+   "room": "rooms",
+   "description": "FallSeed Agents — level-3 seed · 6 role-tier agent presets with in-tab scheduler in one HTML · MIT",
+   "url": "https://sjgant80-hub.github.io/fallseed-agents/",
+   "repo": "https://sjgant80-hub.github.io/fallseed-agents/",
+   "caps": {
+    "skill_invoke": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallswarm",
+   "room": "rooms",
+   "description": "fallswarm · sovereign single-file tool · @ai-native-solutions",
+   "url": "https://sjgant80-hub.github.io/fallswarm/",
+   "repo": "https://sjgant80-hub.github.io/fallswarm/",
+   "caps": {
+    "skill_invoke": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "konomesh",
+   "room": "rooms",
+   "description": null,
+   "url": "https://sjgant80-hub.github.io/konomesh/",
+   "repo": "https://sjgant80-hub.github.io/konomesh/",
+   "caps": {
+    "skill_invoke": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "konomi-swarm",
+   "room": "rooms",
+   "description": "Colony primitive. Every approve is a pheromone deposit. Sovereign JS module. Prime 109.",
+   "url": "https://sjgant80-hub.github.io/konomi-swarm/",
+   "repo": "https://sjgant80-hub.github.io/konomi-swarm/",
+   "caps": {
+    "skill_invoke": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "mesh-89-tracker",
+   "room": "rooms",
+   "description": "Sovereign WebRTC peer-mesh tracker · counts peers toward 89 · nothing leaves your browser",
+   "url": "https://sjgant80-hub.github.io/mesh-89-tracker/",
+   "repo": "https://sjgant80-hub.github.io/mesh-89-tracker/",
+   "caps": {
+    "skill_invoke": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "mesh-sings",
+   "room": "rooms",
+   "description": null,
+   "url": "https://sjgant80-hub.github.io/mesh-sings/",
+   "repo": "https://sjgant80-hub.github.io/mesh-sings/",
+   "caps": {
+    "skill_invoke": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "si-didy-cascade",
+   "room": "rooms",
+   "description": "L1 upgrade · routes si-didy Claude calls through T0/T2/T3 cascade + mesh cache-first · 60-80% token cut",
+   "url": "https://sjgant80-hub.github.io/si-didy-cascade/",
+   "repo": "https://sjgant80-hub.github.io/si-didy-cascade/",
+   "caps": {
+    "skill_invoke": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "si-didy-close",
+   "room": "rooms",
+   "description": "L1 upgrade · wires fallresolve into si-didy session close · Ed25519 signed audit chain per session · CID-anchored in FallPod",
+   "url": "https://sjgant80-hub.github.io/si-didy-close/",
+   "repo": "https://sjgant80-hub.github.io/si-didy-close/",
+   "caps": {
+    "skill_invoke": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "si-didy-k2",
+   "room": "rooms",
+   "description": "K₂ half of the K₀+K₂ bonded pair · Thomas-shape scaffold · state-space/Mamba target · fills the pair mandate slot",
+   "url": "https://sjgant80-hub.github.io/si-didy-k2/",
+   "repo": "https://sjgant80-hub.github.io/si-didy-k2/",
+   "caps": {
+    "skill_invoke": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "si-didy-memory",
+   "room": "rooms",
+   "description": "L1 upgrade · warm si-didy from fallmind-v2 cube on boot · 16-dim FemtoLLM cosine NN · multi-day context continuity",
+   "url": "https://sjgant80-hub.github.io/si-didy-memory/",
+   "repo": "https://sjgant80-hub.github.io/si-didy-memory/",
+   "caps": {
+    "skill_invoke": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "si-didy-signer",
+   "room": "rooms",
+   "description": "L1 upgrade · Konomi Ed25519 signs every outbound Claude call · defeats OAuth-token theft",
+   "url": "https://sjgant80-hub.github.io/si-didy-signer/",
+   "repo": "https://sjgant80-hub.github.io/si-didy-signer/",
+   "caps": {
+    "skill_invoke": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "si-didy-stance",
+   "room": "rooms",
+   "description": "L1 upgrade · mesh_stance toggle widget for si-didy · private/selective/public with live peer visibility preview",
+   "url": "https://sjgant80-hub.github.io/si-didy-stance/",
+   "repo": "https://sjgant80-hub.github.io/si-didy-stance/",
+   "caps": {
+    "skill_invoke": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "estate-nest",
+   "room": "memory",
+   "description": "The OFFRAMP pipeline pointed inward — the ~1000-repo estate nested into the dodeca memory: signed by content, placed by golden angle, wired by typed edges, WALKABLE. Answer 'what do I have' by traversing. Proof-of-play CLEAN.",
+   "url": "https://sjgant80-hub.github.io/estate-nest/",
+   "repo": "https://sjgant80-hub.github.io/estate-nest/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fall-remember",
+   "room": "memory",
+   "description": "Content-addressed memory in twelve chambers: sign by content, route to a chamber, traverse typed edges between them. Balanced placement by golden-angle addressing. Zero dependencies.",
+   "url": "https://sjgant80-hub.github.io/fall-remember/",
+   "repo": "https://sjgant80-hub.github.io/fall-remember/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fallrecall",
+   "room": "memory",
+   "description": "fallrecall — take your AI memory back · import frontier-lab exports, analyse flavour, generate portable prompts that work anywhere · MIT",
+   "url": "https://sjgant80-hub.github.io/fallrecall/",
+   "repo": "https://sjgant80-hub.github.io/fallrecall/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fallseed",
+   "room": "memory",
+   "description": "Ring 0 substrate root · sovereign estate-seed generator · every fallseed-* vertical descends from this · single-file HTML PWA",
+   "url": "https://sjgant80-hub.github.io/fallseed/",
+   "repo": "https://sjgant80-hub.github.io/fallseed/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fallseed-accountancy",
+   "room": "memory",
+   "description": "FallSeed for UK accountancy firms — single-HTML PWA · 4 tools · LLM-agnostic cascade · MIT · sovereign",
+   "url": "https://sjgant80-hub.github.io/fallseed-accountancy/",
+   "repo": "https://sjgant80-hub.github.io/fallseed-accountancy/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fallseed-claims",
+   "room": "memory",
+   "description": "FallSeed for UK claims firms — single-HTML PWA · 4 tools · LLM-agnostic cascade · MIT · sovereign",
+   "url": "https://sjgant80-hub.github.io/fallseed-claims/",
+   "repo": "https://sjgant80-hub.github.io/fallseed-claims/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fallseed-clinic",
+   "room": "memory",
+   "description": "FallSeed for UK clinic firms — single-HTML PWA · 4 tools · LLM-agnostic cascade · MIT · sovereign",
+   "url": "https://sjgant80-hub.github.io/fallseed-clinic/",
+   "repo": "https://sjgant80-hub.github.io/fallseed-clinic/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fallseed-compliance",
+   "room": "memory",
+   "description": "FallSeed Compliance — level-1 seed · multi-framework posture in one HTML · ISO27001 + CE + SOC2 full + PCI / NIS2 / DORA stubs · MIT",
+   "url": "https://sjgant80-hub.github.io/fallseed-compliance/",
+   "repo": "https://sjgant80-hub.github.io/fallseed-compliance/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fallseed-creator-os",
+   "room": "memory",
+   "description": "FallSeed Creator-OS — level-2 seed · 6 persona-tier Personal-OS presets in one HTML · MIT",
+   "url": "https://sjgant80-hub.github.io/fallseed-creator-os/",
+   "repo": "https://sjgant80-hub.github.io/fallseed-creator-os/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fallseed-estate",
+   "room": "memory",
+   "description": "FallSeed for UK estate firms — single-HTML PWA · 4 tools · LLM-agnostic cascade · MIT · sovereign",
+   "url": "https://sjgant80-hub.github.io/fallseed-estate/",
+   "repo": "https://sjgant80-hub.github.io/fallseed-estate/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fallseed-generator",
+   "room": "memory",
+   "description": "Ring 0 (ground) flagship · meta-generator for fallseed-<vertical> tools · MIT",
+   "url": "https://sjgant80-hub.github.io/fallseed-generator/",
+   "repo": "https://sjgant80-hub.github.io/fallseed-generator/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fallseed-hr",
+   "room": "memory",
+   "description": null,
+   "url": "https://sjgant80-hub.github.io/fallseed-hr/",
+   "repo": "https://sjgant80-hub.github.io/fallseed-hr/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fallseed-ifa",
+   "room": "memory",
+   "description": "FallSeed for UK ifa firms — single-HTML PWA · 4 tools · LLM-agnostic cascade · MIT · sovereign",
+   "url": "https://sjgant80-hub.github.io/fallseed-ifa/",
+   "repo": "https://sjgant80-hub.github.io/fallseed-ifa/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fallseed-insurance",
+   "room": "memory",
+   "description": "FallSeed for UK insurance firms — single-HTML PWA · 4 tools · LLM-agnostic cascade · MIT · sovereign",
+   "url": "https://sjgant80-hub.github.io/fallseed-insurance/",
+   "repo": "https://sjgant80-hub.github.io/fallseed-insurance/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fallseed-law",
+   "room": "memory",
+   "description": "FallSeed for UK law firms — single-HTML PWA · 4 tools · LLM-agnostic cascade · MIT · sovereign",
+   "url": "https://sjgant80-hub.github.io/fallseed-law/",
+   "repo": "https://sjgant80-hub.github.io/fallseed-law/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fallseed-meta",
+   "room": "memory",
+   "description": "FallSeed Meta — monitor seed for the estate · population · lineage · live mesh · smoke test · MIT",
+   "url": "https://sjgant80-hub.github.io/fallseed-meta/",
+   "repo": "https://sjgant80-hub.github.io/fallseed-meta/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fallseed-mortgage",
+   "room": "memory",
+   "description": "FallSeed for UK mortgage firms — single-HTML PWA · 4 tools · LLM-agnostic cascade · MIT · sovereign",
+   "url": "https://sjgant80-hub.github.io/fallseed-mortgage/",
+   "repo": "https://sjgant80-hub.github.io/fallseed-mortgage/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fallseed-recruit",
+   "room": "memory",
+   "description": "FallSeed for UK recruit firms — single-HTML PWA · 4 tools · LLM-agnostic cascade · MIT · sovereign",
+   "url": "https://sjgant80-hub.github.io/fallseed-recruit/",
+   "repo": "https://sjgant80-hub.github.io/fallseed-recruit/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fallseed-vet",
+   "room": "memory",
+   "description": "FallSeed for UK vet firms — single-HTML PWA · 4 tools · LLM-agnostic cascade · MIT · sovereign",
+   "url": "https://sjgant80-hub.github.io/fallseed-vet/",
+   "repo": "https://sjgant80-hub.github.io/fallseed-vet/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fallseed-village",
+   "room": "memory",
+   "description": "FallSeed Village — level-4 institution seed · signed-bundle governance · 5 presets in one HTML · MIT",
+   "url": "https://sjgant80-hub.github.io/fallseed-village/",
+   "repo": "https://sjgant80-hub.github.io/fallseed-village/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "honestly",
+   "room": "memory",
+   "description": "◊ HONESTLY · verified search · the Perplexity killer · 3-vote adversarial verification on every claim · Konomi-signed answer envelopes · BYOK search + LLM · sovereign single-file · MIT",
+   "url": "https://sjgant80-hub.github.io/honestly/",
+   "repo": "https://sjgant80-hub.github.io/honestly/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "offramp-v2",
+   "room": "memory",
+   "description": "The sovereign chat-history off-ramp — a dead vendor JSON export → live searchable memory. Content-addressed (cross-vendor dedupe proven), versioned extraction, the wisp over your own thinking-history. Runs in your browser. Proof-of-play CLEAN 60/60.",
+   "url": "https://sjgant80-hub.github.io/offramp-v2/",
+   "repo": "https://sjgant80-hub.github.io/offramp-v2/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "oracleengine",
+   "room": "memory",
+   "description": "A Bayesian watcher for the present: tracks the pattern as it happens and updates its beliefs as evidence arrives.",
+   "url": "https://sjgant80-hub.github.io/oracleengine/",
+   "repo": "https://sjgant80-hub.github.io/oracleengine/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "seedmind",
+   "room": "memory",
+   "description": "A knowledge organism in one file: holds a life, proposes its own links overnight, and can seed a living child.",
+   "url": "https://sjgant80-hub.github.io/seedmind/",
+   "repo": "https://sjgant80-hub.github.io/seedmind/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "the-dreamer",
+   "room": "memory",
+   "description": "An overnight consolidation cycle for any local model: merge, type, close transitively, generalise, resolve by evidence, prune. Answers better each morning with the weights unchanged.",
+   "url": "https://sjgant80-hub.github.io/the-dreamer/",
+   "repo": "https://sjgant80-hub.github.io/the-dreamer/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "the-oracle",
+   "room": "memory",
+   "description": "A branch-holder, not a predictor: forks divergent futures at a golden offset so they spread instead of clustering on the obvious, holds them open, and keeps the roads not taken. Never collapses on its own.",
+   "url": "https://sjgant80-hub.github.io/the-oracle/",
+   "repo": "https://sjgant80-hub.github.io/the-oracle/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "the-wisp",
+   "room": "memory",
+   "description": "The wisp pointed at the whole estate as substrate — ~1000 repos as one field of folds, the moving frontier dancing across, with the heat-sink and spiral/orbit diagnostics from real data. Proof-of-play CLEAN.",
+   "url": "https://sjgant80-hub.github.io/the-wisp/",
+   "repo": "https://sjgant80-hub.github.io/the-wisp/",
+   "caps": {
+    "filesystem": "write"
+   }
+  },
+  {
+   "name": "fallcore",
+   "room": "models",
+   "description": "FallCore - on-prem brain that learns from your work - Anthropic-API-compatible local proxy + RAG + LoRA loop - reduces frontier-API reliance over time",
+   "url": "https://sjgant80-hub.github.io/fallcore/",
+   "repo": "https://sjgant80-hub.github.io/fallcore/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallcore-factory",
+   "room": "models",
+   "description": "FallCore Factory - the factory that mints branded FallCore deployments on demand. Describe your company - download a complete docker-compose stack with cascade, RAG, LoRA loop, signed Konomi licence - all branded.",
+   "url": "https://sjgant80-hub.github.io/fallcore-factory/",
+   "repo": "https://sjgant80-hub.github.io/fallcore-factory/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallmage",
+   "room": "models",
+   "description": "◊ FallMage · sovereign Photoshop wedge · single HTML · open · crop · rotate · resize · filter · text · brush · layers · Ω autopilot · prime 433 · MIT",
+   "url": "https://sjgant80-hub.github.io/fallmage/",
+   "repo": "https://sjgant80-hub.github.io/fallmage/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallmind",
+   "room": "models",
+   "description": "FallMind · sovereign self-trained LLM estate · prime 587 · diamond·kappa=1 · 7-ring discipline",
+   "url": "https://sjgant80-hub.github.io/fallmind/",
+   "repo": "https://sjgant80-hub.github.io/fallmind/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallmirror",
+   "room": "models",
+   "description": "Sovereign self-reflection tool · runs locally · nothing leaves your browser",
+   "url": "https://sjgant80-hub.github.io/fallmirror/",
+   "repo": "https://sjgant80-hub.github.io/fallmirror/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallrelay",
+   "room": "models",
+   "description": "Local bridge that lets a browser-resident model serve completions to tools on the same machine, so bulk work stays on your own hardware.",
+   "url": "https://sjgant80-hub.github.io/fallrelay/",
+   "repo": "https://sjgant80-hub.github.io/fallrelay/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallrouter",
+   "room": "models",
+   "description": "Sovereign model orchestrator · routes between local Ollama and frontier APIs · auto-failover · tamper-evident audit · MIT · Simon Gant",
+   "url": "https://sjgant80-hub.github.io/fallrouter/",
+   "repo": "https://sjgant80-hub.github.io/fallrouter/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "fall-registry",
+   "room": "market",
+   "description": "Canonical index of Fall sovereign plugins · machine-readable manifest for fall-hot watchers",
+   "url": "https://sjgant80-hub.github.io/fall-registry/",
+   "repo": "https://sjgant80-hub.github.io/fall-registry/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallforge",
+   "room": "market",
+   "description": "The AI concierge that installs your business OS. FallHub concierge installer. MIT.",
+   "url": "https://sjgant80-hub.github.io/fallforge/",
+   "repo": "https://sjgant80-hub.github.io/fallforge/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallhub",
+   "room": "market",
+   "description": "Sovereign direct-booking + unified inbox + AI reply drafting for independent stay operators · MIT · fork-and-configure · Wishwood-tested",
+   "url": "https://sjgant80-hub.github.io/fallhub/",
+   "repo": "https://sjgant80-hub.github.io/fallhub/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallkard",
+   "room": "market",
+   "description": "Sovereign card game · every AI-Native Solutions tool as a real card · D2R aesthetics · Hearthstone lane combat · MIT",
+   "url": "https://sjgant80-hub.github.io/fallkard/",
+   "repo": "https://sjgant80-hub.github.io/fallkard/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallkard-forge",
+   "room": "market",
+   "description": "A PNG that openly carries a real, runnable build in declared chunks. Not steganography — the payload is declared, listed and extractable.",
+   "url": "https://sjgant80-hub.github.io/fallkard-forge/",
+   "repo": "https://sjgant80-hub.github.io/fallkard-forge/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallmarket",
+   "room": "market",
+   "description": "The sovereign registry of AI tools, agents, SDKs, MCP servers, and HTTP APIs · 763 listings · all MIT · all Ed25519-signed · all benchmarkable",
+   "url": "https://sjgant80-hub.github.io/fallmarket/",
+   "repo": "https://sjgant80-hub.github.io/fallmarket/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallstore",
+   "room": "market",
+   "description": "Content-addressed storage · IPFS-lite in one file · SHA-256 CIDs · verify by hash · foundational estate layer",
+   "url": "https://sjgant80-hub.github.io/fallstore/",
+   "repo": "https://sjgant80-hub.github.io/fallstore/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "forge-lab",
+   "room": "market",
+   "description": "Forge Lab - Domain Expert Tool Builder - prime 47",
+   "url": "https://sjgant80-hub.github.io/forge-lab/",
+   "repo": "https://sjgant80-hub.github.io/forge-lab/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "kard",
+   "room": "market",
+   "description": "Superseded by FallKard · sovereign card game where every AI-Native Solutions tool is a real playable card · MIT",
+   "url": "https://sjgant80-hub.github.io/kard/",
+   "repo": "https://sjgant80-hub.github.io/kard/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "kardv5",
+   "room": "market",
+   "description": "Sovereign paralegal. Tribunal skeletons + negotiation letters + counter-argument generation. Snap-in FallHub module. MIT.",
+   "url": "https://sjgant80-hub.github.io/kardv5/",
+   "repo": "https://sjgant80-hub.github.io/kardv5/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "roost",
+   "room": "market",
+   "description": "Sovereign stays-as-commons marketplace · cooperative · zero booking fees · built on open stays-protocol · the Airbnb alternative",
+   "url": "https://sjgant80-hub.github.io/roost/",
+   "repo": "https://sjgant80-hub.github.io/roost/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "tradeshub",
+   "room": "market",
+   "description": "The trades showroom for FallHub. Sovereign AI-first OS for tradespeople. MIT.",
+   "url": "https://sjgant80-hub.github.io/tradeshub/",
+   "repo": "https://sjgant80-hub.github.io/tradeshub/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "trilogy-forge",
+   "room": "market",
+   "description": "The Psychological Build Engine - Jung + Freud + Sales 101. Auto-generates elite AI configs per client archetype, shadow, and role psychology.",
+   "url": "https://sjgant80-hub.github.io/trilogy-forge/",
+   "repo": "https://sjgant80-hub.github.io/trilogy-forge/",
+   "caps": {
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallcarousel",
+   "room": "social",
+   "description": "◊ fallcarousel · sovereign LinkedIn carousel builder · 1.39x reach format · prime 367",
+   "url": "https://sjgant80-hub.github.io/fallcarousel/",
+   "repo": "https://sjgant80-hub.github.io/fallcarousel/",
+   "caps": {
+    "network": "write"
+   }
+  },
+  {
+   "name": "fallecho",
+   "room": "social",
+   "description": "Content-addressed page archiver · pin any page · CID-verified · signed attestations · sovereign uncensorable mirror",
+   "url": "https://sjgant80-hub.github.io/fallecho/",
+   "repo": "https://sjgant80-hub.github.io/fallecho/",
+   "caps": {
+    "network": "write"
+   }
+  },
+  {
+   "name": "fallfeed",
+   "room": "social",
+   "description": "fallfeed · sovereign single-file tool · @ai-native-solutions",
+   "url": "https://sjgant80-hub.github.io/fallfeed/",
+   "repo": "https://sjgant80-hub.github.io/fallfeed/",
+   "caps": {
+    "network": "write"
+   }
+  },
+  {
+   "name": "fallmail",
+   "room": "social",
+   "description": "P2P encrypted messaging · DID-addressed · ECDH+AES-GCM · no SMTP no server · FallID+FallLink+FallPod stack",
+   "url": "https://sjgant80-hub.github.io/fallmail/",
+   "repo": "https://sjgant80-hub.github.io/fallmail/",
+   "caps": {
+    "network": "write"
+   }
+  },
+  {
+   "name": "fallpost",
+   "room": "social",
+   "description": "Sovereign LinkedIn engine · Jung+Freud+Sales 101 baked in · BYOK cascade · sovereign tone seed",
+   "url": "https://sjgant80-hub.github.io/fallpost/",
+   "repo": "https://sjgant80-hub.github.io/fallpost/",
+   "caps": {
+    "network": "write"
+   }
+  },
+  {
+   "name": "fallreach",
+   "room": "social",
+   "description": "Sovereign AI SDR. Your hardware. Your keys. Your pipeline.",
+   "url": "https://sjgant80-hub.github.io/fallreach/",
+   "repo": "https://sjgant80-hub.github.io/fallreach/",
+   "caps": {
+    "network": "write"
+   }
+  },
+  {
+   "name": "offgridcommunitiessystem",
+   "room": "social",
+   "description": "Konomi Cube Coin · sovereign community OS for off-grid / intentional communities · single HTML · IndexedDB · MIT",
+   "url": "https://sjgant80-hub.github.io/offgridcommunitiessystem/",
+   "repo": "https://sjgant80-hub.github.io/offgridcommunitiessystem/",
+   "caps": {
+    "network": "write"
+   }
+  },
+  {
+   "name": "fall-vetter",
+   "room": "clinics",
+   "description": "◊ fall-vetter · drop-in guild signup gate · R2 ┃ validate · prime 347",
+   "url": "https://sjgant80-hub.github.io/fall-vetter/",
+   "repo": "https://sjgant80-hub.github.io/fall-vetter/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallclinic",
+   "room": "clinics",
+   "description": null,
+   "url": "https://sjgant80-hub.github.io/fallclinic/",
+   "repo": "https://sjgant80-hub.github.io/fallclinic/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallclinic-us",
+   "room": "clinics",
+   "description": "fallclinic-us · sovereign single-file tool · @ai-native-solutions",
+   "url": "https://sjgant80-hub.github.io/fallclinic-us/",
+   "repo": "https://sjgant80-hub.github.io/fallclinic-us/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallcliniconboard",
+   "room": "clinics",
+   "description": null,
+   "url": "https://sjgant80-hub.github.io/fallcliniconboard/",
+   "repo": "https://sjgant80-hub.github.io/fallcliniconboard/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallclinicpaper",
+   "room": "clinics",
+   "description": null,
+   "url": "https://sjgant80-hub.github.io/fallclinicpaper/",
+   "repo": "https://sjgant80-hub.github.io/fallclinicpaper/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallclinicpractice",
+   "room": "clinics",
+   "description": null,
+   "url": "https://sjgant80-hub.github.io/fallclinicpractice/",
+   "repo": "https://sjgant80-hub.github.io/fallclinicpractice/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "falldental",
+   "room": "clinics",
+   "description": "falldental · sovereign single-file tool · @ai-native-solutions",
+   "url": "https://sjgant80-hub.github.io/falldental/",
+   "repo": "https://sjgant80-hub.github.io/falldental/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "falldental-us",
+   "room": "clinics",
+   "description": "falldental-us · sovereign single-file tool · @ai-native-solutions",
+   "url": "https://sjgant80-hub.github.io/falldental-us/",
+   "repo": "https://sjgant80-hub.github.io/falldental-us/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallelder",
+   "room": "clinics",
+   "description": "fallelder · sovereign single-file tool · @ai-native-solutions",
+   "url": "https://sjgant80-hub.github.io/fallelder/",
+   "repo": "https://sjgant80-hub.github.io/fallelder/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallelder-us",
+   "room": "clinics",
+   "description": "fallelder-us · sovereign single-file tool · @ai-native-solutions",
+   "url": "https://sjgant80-hub.github.io/fallelder-us/",
+   "repo": "https://sjgant80-hub.github.io/fallelder-us/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "falloptom",
+   "room": "clinics",
+   "description": "falloptom · sovereign single-file tool · @ai-native-solutions",
+   "url": "https://sjgant80-hub.github.io/falloptom/",
+   "repo": "https://sjgant80-hub.github.io/falloptom/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "falloptom-us",
+   "room": "clinics",
+   "description": "falloptom-us · sovereign single-file tool · @ai-native-solutions",
+   "url": "https://sjgant80-hub.github.io/falloptom-us/",
+   "repo": "https://sjgant80-hub.github.io/falloptom-us/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallpharm",
+   "room": "clinics",
+   "description": "fallpharm · sovereign single-file tool · @ai-native-solutions",
+   "url": "https://sjgant80-hub.github.io/fallpharm/",
+   "repo": "https://sjgant80-hub.github.io/fallpharm/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallpharm-us",
+   "room": "clinics",
+   "description": "fallpharm-us · sovereign single-file tool · @ai-native-solutions",
+   "url": "https://sjgant80-hub.github.io/fallpharm-us/",
+   "repo": "https://sjgant80-hub.github.io/fallpharm-us/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallphysio",
+   "room": "clinics",
+   "description": "fallphysio · sovereign single-file tool · @ai-native-solutions",
+   "url": "https://sjgant80-hub.github.io/fallphysio/",
+   "repo": "https://sjgant80-hub.github.io/fallphysio/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallphysio-us",
+   "room": "clinics",
+   "description": "fallphysio-us · sovereign single-file tool · @ai-native-solutions",
+   "url": "https://sjgant80-hub.github.io/fallphysio-us/",
+   "repo": "https://sjgant80-hub.github.io/fallphysio-us/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallvet",
+   "room": "clinics",
+   "description": null,
+   "url": "https://sjgant80-hub.github.io/fallvet/",
+   "repo": "https://sjgant80-hub.github.io/fallvet/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallvet-us",
+   "room": "clinics",
+   "description": "fallvet-us · sovereign single-file tool · @ai-native-solutions",
+   "url": "https://sjgant80-hub.github.io/fallvet-us/",
+   "repo": "https://sjgant80-hub.github.io/fallvet-us/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallvetonboard",
+   "room": "clinics",
+   "description": "fallvetonboard — single-HTML PWA tool · sovereign · MIT",
+   "url": "https://sjgant80-hub.github.io/fallvetonboard/",
+   "repo": "https://sjgant80-hub.github.io/fallvetonboard/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallvetpaper",
+   "room": "clinics",
+   "description": null,
+   "url": "https://sjgant80-hub.github.io/fallvetpaper/",
+   "repo": "https://sjgant80-hub.github.io/fallvetpaper/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  },
+  {
+   "name": "fallvetpractice",
+   "room": "clinics",
+   "description": null,
+   "url": "https://sjgant80-hub.github.io/fallvetpractice/",
+   "repo": "https://sjgant80-hub.github.io/fallvetpractice/",
+   "caps": {
+    "filesystem": "write",
+    "network": "read"
+   }
+  }
+ ],
+ "undescribed": [
+  "ring-assessor",
+  "fallmesh",
+  "konomesh",
+  "mesh-sings",
+  "fallseed-hr",
+  "fallclinic",
+  "fallcliniconboard",
+  "fallclinicpaper",
+  "fallclinicpractice",
+  "fallvet",
+  "fallvetpaper",
+  "fallvetpractice"
+ ]
+}
