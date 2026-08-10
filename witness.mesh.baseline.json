@@ -1,0 +1,7 @@
+[
+  {
+    "mutation": "> → >=",
+    "snippet": "if (rank(lvl) > rank(caps[r] || 'none')) caps[r] = lvl;",
+    "reason": "PROVABLY EQUIVALENT. Both sides come from PROVIDES_CAPS, whose values are the canonical level strings, so equal rank means an identical string and the extra assignment >= permits is a no-op. The strictly-greater form is kept because it states the intent — only raise the level, never rewrite it — and §8 pins the behaviour that actually matters: whichever order two provides are listed in, the higher level wins."
+  }
+]
