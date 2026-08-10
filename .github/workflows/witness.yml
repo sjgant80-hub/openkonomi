@@ -1,0 +1,20 @@
+name: witness
+on: [push, pull_request]
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: assertion suites
+        run: |
+          node capability.test.mjs
+          node skill.test.mjs
+      - name: mutation gate (witness)
+        # Pinned to a TAG. An unpinned clone means the gate proving this repo can change underneath
+        # it with no commit here — the result would stop being a fact about this code.
+        run: |
+          git clone --depth 1 --branch v0.2 https://github.com/sjgant80-hub/witness.git .witness
+          node .witness/witness.mjs mutate capability.mjs --cap 400 --baseline witness.baseline.json       --test node capability.test.mjs
+          node .witness/witness.mjs mutate skill.mjs      --cap 400 --baseline witness.skill.baseline.json --test node skill.test.mjs

@@ -1,0 +1,7 @@
+[
+  {
+    "mutation": "> → >=",
+    "snippet": "while (stack.length > 1 && indent <= stack[stack.length - 1].indent) stack.pop();",
+    "reason": "PROVABLY EQUIVALENT, given the sentinel. The root frame is pushed with indent -1 and every real line has an indent of 0 or more, so the second condition (indent <= -1) is already false whenever stack.length is 1. The length guard can therefore never be the thing that stops the loop, and relaxing it to >= changes no reachable behaviour. The guard is KEPT rather than deleted because it is what makes the sentinel's role explicit to a reader — without it, the loop's safety depends on a fact stated 20 lines away."
+  }
+]

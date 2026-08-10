@@ -1,0 +1,12 @@
+[
+  {
+    "mutation": "< → <=",
+    "snippet": "return i < 0 ? 0 : i;                                 // an unknown level is NONE, never a",
+    "reason": "PROVABLY EQUIVALENT. `i` is Array.indexOf, so its range is exactly {-1, 0, 1, 2, 3}. The guard maps -1 to 0 and returns i otherwise; under <= the only additional case is i === 0, which returns 0 — the same value it would have returned anyway. No input distinguishes the two, so no test can. Kept as a mutant rather than rewritten, because the guard reads correctly as written."
+  },
+  {
+    "mutation": "> → >=",
+    "snippet": "if (rank(child.caps[r]) > rank(parent.caps[r])) child.caps[r] = parent.caps[r];",
+    "reason": "PROVABLY EQUIVALENT. Both sides were produced by grant(), which normalises every level through LEVELS[rank(lvl)] — so equal rank means an identical canonical string. Under >= the extra case is rank equality, which assigns parent's value over an already-identical child value. The assignment is a no-op, so the clamp cannot be observed to behave differently. The stricter > is kept because it says what is meant: only clamp when the child is actually asking for more."
+  }
+]
