@@ -105,6 +105,27 @@
   .limits h2{color:var(--warn)}
   .faq h4{font-size:1.03rem;margin:24px 0 4px}
   footer{border-top:1px solid var(--line);padding:36px 0 64px;color:var(--muted);font-size:.94rem}
+  .ctanote{margin:16px 0 0;font:400 .93rem/1.65 ui-sans-serif,system-ui,sans-serif;color:var(--muted);max-width:64ch}
+  .rooms{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin:20px 0}
+  .room{text-align:left;padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--panel);
+        cursor:pointer;font-family:ui-sans-serif,system-ui,sans-serif;color:var(--ink);display:block}
+  .room:hover{border-color:var(--accent)}
+  .room b{display:block;font-size:1.04rem;line-height:1.3}
+  .room .cnt{display:block;font:600 .78rem/1 var(--mono);color:var(--accent);margin:6px 0 8px}
+  .room small{display:block;color:var(--muted);font-size:.88rem;line-height:1.5}
+  .room.grey{opacity:.72;border-style:dashed}
+  .room.grey .cnt{color:var(--muted)}
+  .up{border:1px solid var(--line);border-radius:12px;padding:17px;margin:12px 0;background:var(--panel)}
+  .up b{font-family:ui-sans-serif,system-ui,sans-serif;font-size:1.05rem}
+  .up .does{margin:6px 0 10px;font-size:.95rem;color:var(--ink)}
+  .up .touch{margin:0 0 12px;font-size:.9rem;color:var(--muted)}
+  .up .touch .lbl{font-weight:650;color:var(--ink)}
+  .uprow{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+  .uprow .free{font:600 .82rem/1 var(--mono);color:var(--ok)}
+  .ask{border:1px solid var(--accent);border-radius:12px;padding:18px;margin:0 0 16px;
+       background:color-mix(in srgb,var(--accent) 7%,transparent);font-family:ui-sans-serif,system-ui,sans-serif}
+  .ask b{display:block;font-size:1.02rem;margin-bottom:8px}
+  .ask p{font-size:.92rem;margin:0 0 8px}
   a{color:var(--accent)}
   .src{font-size:.86rem;color:var(--faint)}
 </style>
@@ -116,13 +137,22 @@
   <p class="sub">An AI agent is a program that can act on your computer — open files, send messages, run commands. This page lets you decide, in plain words, exactly what one is allowed to touch and how much it may spend. Then it proves the limit holds before you let anything run.</p>
   <p class="free">Free. No account. Nothing you type here leaves your browser.</p>
   <div class="cta">
-    <a class="btn" href="#boundary">Set an agent's limits</a>
-    <a class="btn ghost" href="#what">Or read what an agent actually is</a>
+    <a class="btn" href="#boundary">Get a Didy</a>
+    <a class="btn ghost" href="#skillcheck">Link the agent you already have</a>
   </div>
+  <p class="ctanote"><b>Get a Didy</b> — free, about two minutes. You end up with an agent that has your name on it, an allowance you set, and one upgrade installed. No account, no password, nothing uploaded.<br>
+  <b>Link the agent you already have</b> — paste a skill file and we read its own words, then tell you what it actually reaches for and where that contradicts what it says about itself. About thirty seconds. We do not install anything.</p>
   <p class="strap">Today this sets the boundary and proves it holds. It does not yet plug into your email, your files, or an AI provider. It is the lock, fitted and tested — not the house.</p>
 </div></header>
 
 <main>
+
+<section><div class="wrap">
+  <h2>What is this?</h2>
+  <p class="lede">An AI agent is a program that does jobs for you — reads a file, drafts a reply, checks a list. The hard part is knowing what it will touch, and when it will stop.</p>
+  <p class="lede">openkonomi gives you a blank one, called a Didy. You teach it by adding upgrades. You set what it may touch and how much it may do. It checks the limit before it acts. Nothing leaves your browser.</p>
+</div></section>
+
 
 <section><div class="wrap">
   <div class="card live">
@@ -197,7 +227,7 @@
   <div id="created"></div>
 </div></section>
 
-<section><div class="wrap">
+<section id="skillcheck"><div class="wrap">
   <h2>Check a skill before you install it</h2>
   <p>Paste in a skill file and this will read it the way your agent would.</p>
   <p>It does two things. It lists what the skill <b>says</b> it needs. Then it reads the instructions themselves and lists what the text <b>actually reaches for</b> — files, the internet, your saved keys, the command line. Where those two lists disagree, it names the disagreement.</p>
@@ -215,6 +245,78 @@
     <summary>What this cannot do</summary>
     <p>It cannot tell you a skill is safe. Nothing can. Published measurements of the two main approaches are sobering: a pattern-matching scanner caught 62 per cent of straightforward attacks and 0 per cent of the ones written as ordinary business prose, and an AI-based classifier went from 99.81 per cent to 0 per cent on the same shift <span class="src">(arXiv:2605.14460, 2026)</span>. One skill defeated two commercial scanners by padding its readme with 22 megabytes of blank characters until it exceeded their size limit <span class="src">(Unit 42, 23 June 2026)</span>. This tool tells you when a skill's words contradict its own declaration. That is a real and useful thing. It is not a clean bill of health, and it is not offered as one.</p>
   </details>
+</div></section>
+
+<section id="shop"><div class="wrap wide">
+  <h2>The shop</h2>
+  <p>104 upgrades, in 7 rooms. All free. All working — open any one and use it before you install it.</p>
+  <div class="rooms" id="rooms"></div>
+  <div id="roomOpen"></div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>How agents hold money-that-is-not-money</h2>
+  <p><b>First, the important bit: no real money moves here.</b> There is no card, no bank, no wallet balance, no coin. An allowance is a number your agent counts down. We are being exact about this because plenty of things in this field are not.</p>
+  <h3>Every agent has a name tag it made itself</h3>
+  <p>The first time you ran your Didy, this computer made a small unique marker for it. It stays on this computer. Everything your Didy is allowed to do gets stamped with it, so when you look at a job later you can tell it was your agent that did it — not something wearing its name.</p>
+  <p>It is not a password. You never type it and you never send it. We do not have a copy, and if this computer dies without a backup, we cannot make you another one.</p>
+  <h3>Every agent gets an allowance</h3>
+  <p>You give your Didy a number: how many things it may do, and how much it may spend doing them. Before every single action, it checks the number. If there is not enough left, it does not act. It stops and says so.</p>
+  <p><b>A refusal costs nothing.</b> If your Didy asks to do something it is not allowed to do, that refusal is free. This matters more than it sounds: otherwise anyone could drain your allowance just by asking for things they were never going to get.</p>
+  <h3>Handing some of it on</h3>
+  <p>Your Didy can pass a job to another agent, and give it part of the allowance to do it with. Three rules, and they are not negotiable:</p>
+  <ul>
+    <li>The second agent can never get more than the first one had left.</li>
+    <li>It can never get a permission the first one did not have.</li>
+    <li>It cannot hand back up. Every step down the chain is smaller than the step above it.</li>
+  </ul>
+  <p>Think of it as sub-contracting with a fixed fee agreed up front. Where the comparison breaks: a real sub-contractor can ring you and ask for more. This one cannot ask. It can only stop.</p>
+  <p>If two limits overlap, the tighter one wins. Set 100 actions a day and 5 for this job, and this job gets 5.</p>
+  <details>
+    <summary>Where this is standard, and where it is ours</summary>
+    <div>
+      <h4>Standard, and we use it as-is</h4>
+      <ul>
+        <li>The signing that makes your agent's name tag is <b>Ed25519</b> — the same kind used in the A2A protocol's signed agent cards (v1.0.1, Linux Foundation) and in Web Bot Auth, built on RFC 9421 and already running at internet scale.</li>
+        <li>“A handed-down permission can only ever shrink” is not our idea. It is how <b>macaroons</b> have worked since 2014, and how Biscuit and UCAN work today. We did not invent a token format, and you should be suspicious of anyone who does.</li>
+      </ul>
+      <h4>Ours, because nobody else has shipped it</h4>
+      <ul>
+        <li><b>The allowance itself.</b> A published analysis of the three main agent protocols <span class="src">(arXiv 2606.31498)</span> finds that none of MCP, A2A or ACP can express a budget, a revocation, a delegation chain, or who is liable. The nearest standards attempt is a “mandate ceiling” in an individual IETF draft from May 2026. Ours is a number, checked before the action, that goes down.</li>
+        <li><b>Working out what a skill reaches for from its own text</b>, instead of believing what it declares. No ecosystem we surveyed computes that from the artefact.</li>
+      </ul>
+      <h4>Not here at all, and we are not pretending otherwise</h4>
+      <ul>
+        <li><b>Payments.</b> A real agent payment rail exists — x402, under the Linux Foundation since 14 July 2026, with Visa, Mastercard, Stripe and Shopify among 40 members. We do not connect to it.</li>
+        <li><b>Reputation across a network.</b> Nobody has solved that. We are not claiming to.</li>
+      </ul>
+    </div>
+  </details>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Now you have seen it, here are the six words</h2>
+  <h4>Agent</h4>
+  <p>A program that does jobs for you, one after another, without you watching each one. Yours is called a Didy.</p>
+  <h4>Organ, or upgrade</h4>
+  <p>One skill you add to your agent. Same idea as an app on a phone: it arrives, it does one thing, you can remove it. We call them organs; the shop calls them upgrades, because that is what they are to you.</p>
+  <h4>Permission</h4>
+  <p>One sentence saying what your agent may do, to what, and where it stops. “Read files in your Downloads folder” is a permission. It is always a sentence with a verb and a boundary, never a word like “filesystem”.</p>
+  <h4>Allowance</h4>
+  <p>How much your agent may do before it must stop. It is a wall, not a warning. When it runs out, the agent stops and tells you it stopped.</p>
+  <h4>Name tag, or signed identity</h4>
+  <p>A small marker your computer made for your agent, which never leaves this computer. Every action gets stamped with it, so you can prove later which agent did what. It is not a password.</p>
+  <h4>Verified listing</h4>
+  <p>An upgrade in our shop that has passed a check anyone can run again themselves, on exactly the code that is listed. Not a star rating. Not a badge we handed out.</p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>What a listing here means</h2>
+  <p><b>The code that was checked is the code you get.</b> A listing is tied to the exact contents of the thing listed. Change one character and it is no longer that listing.</p>
+  <p><b>It passed a check that does not care about opinions.</b> 277 tests, and every one is mutation-gated — we deliberately broke the code in hundreds of small ways and confirmed the tests noticed. A test suite that passes when the code is broken is theatre; this is how we stop ourselves shipping it.</p>
+  <p><b>The 104 upgrades in the shop were generated from a list of 1,621 real projects</b>, not typed from memory. Every one has a live page you can open.</p>
+  <p><b>We publish the refusals.</b> When something is turned down, the refusal is published with the reason. Every other store we looked at removes things silently. When Microsoft pulled two extensions with 9 million installs between them in 2025, banned the publisher and then reinstated both with an apology, none of it was visible from inside the product.</p>
+  <p><b>What a listing does not mean.</b> It does not mean the upgrade is good at its job, or that you will like it. It means the thing you install is the thing that was checked. That is a smaller claim than the one most stores make, and it is one we can actually keep.</p>
 </div></section>
 
 <section><div class="wrap">
@@ -548,4 +650,117 @@ $('theme').addEventListener('click', () => {
 })();
 
 refresh();
+
+// ── THE SHOP ─────────────────────────────────────────────────────────────────────────────────────
+//
+// Eight tiles, not a search box. A beginner does not know what to search for; they know what they
+// want to happen. The eighth tile is the deliberate one: 286 live organs that have NOT been sorted
+// into rooms, shown at the same size as the rest. The commonest way an ecosystem misleads a beginner
+// is a second tier they cannot see — so ours is on the shelf, labelled, and not recommended.
+const ROOM_COPY = {
+  clinics: { n: 'Whole jobs, ready to go', p: 'Law, health, property, bookings. Someone has already built the job you were about to describe.' },
+  memory:  { n: 'Memory — so it stops forgetting', p: 'Give your Didy somewhere to keep what it learns, and a way to find it again later.' },
+  social:  { n: 'How it talks to you', p: 'Chat, voice, plain summaries, alerts. Choose how your Didy reports back.' },
+  models:  { n: 'Which brain does the thinking', p: 'Pick where the reasoning happens, and send the easy work somewhere cheaper.' },
+  rooms:   { n: 'Working with other agents', p: 'Rooms where several agents take a job between them, without stepping on each other.' },
+  market:  { n: 'Finding work, and listing yours', p: 'Places to look for a capability you need, or to list one you have.' },
+  trust:   { n: 'Proof it was really yours', p: 'Name tags, receipts and re-checkable proof that a job was done by your agent, and done properly.' },
+};
+const ORDER = ['clinics', 'memory', 'social', 'models', 'rooms', 'market', 'trust'];
+
+// What each room's upgrades may touch, said as a sentence with a verb and a boundary — never as the
+// word "filesystem". The kernel enforces the resource; the person reads the sentence.
+const TOUCH = {
+  clinics: 'the details you type in, and files in a folder you choose. It does not go online by itself.',
+  memory:  'its own memory, on this computer. It does not read your files and it does not go online.',
+  social:  'the internet, to send what you asked it to send. It cannot read your files.',
+  models:  'the internet, to reach whichever brain you chose. Your text goes to that brain and nowhere else.',
+  rooms:   'other upgrades you have already installed — and never more than your Didy itself holds.',
+  market:  'the internet, to fetch listings. It cannot install anything without you pressing Add.',
+  trust:   'its own records, on this computer. Reading only.',
+};
+
+let CAT = null;
+
+async function loadShop() {
+  const host = document.getElementById('rooms');
+  if (!host) return;
+  try { CAT = await (await fetch('./catalogue.json')).json(); }
+  catch { host.appendChild(el('p', 'muted', 'The shop list could not be loaded here.')); return; }
+
+  for (const id of ORDER) {
+    const room = CAT.rooms.find(r => r.id === id);
+    if (!room) continue;
+    const c = ROOM_COPY[id];
+    const tile = el('button', 'room');
+    tile.type = 'button';
+    tile.append(el('b', null, c.n), el('span', 'cnt', room.count + ' upgrades'), el('small', null, c.p));
+    tile.addEventListener('click', () => openRoom(id, c.n));
+    host.appendChild(tile);
+  }
+
+  // The eighth tile. Same size, greyed, and honest about why it is not recommended.
+  const rest = CAT.totals.live_unclassified;
+  const grey = el('button', 'room grey');
+  grey.type = 'button';
+  grey.append(el('b', null, 'Not yet sorted'), el('cnt', 'cnt', rest + ' tools'),
+    el('small', null, 'We have ' + rest + ' more working tools that have not been put into rooms yet. They are real and they are live, but they are unsorted, so we are not recommending them.'));
+  grey.addEventListener('click', () => {
+    const box = document.getElementById('roomOpen');
+    box.innerHTML = '';
+    box.appendChild(el('p', 'muted', 'These ' + rest + ' are live and real, and they have not been classified. We are not recommending them, and they are listed at the same size as everything else rather than hidden below a fold.'));
+  });
+  host.appendChild(grey);
+}
+
+function openRoom(id, title) {
+  const box = document.getElementById('roomOpen');
+  box.innerHTML = '';
+  box.appendChild(el('h3', null, title));
+  const list = CAT.organs.filter(o => o.room === id);
+  for (const o of list) {
+    const card = el('div', 'up');
+    card.append(el('b', null, o.name));
+    // Its own description, from the index. Where there is none, that is SAID — never filled in with
+    // an invented sentence, because a made-up description is exactly the lie a shop must not tell.
+    card.append(el('p', 'does', o.description || 'This one has no description written by its author yet. We are not going to invent one.'));
+    const t = el('p', 'touch');
+    t.append(el('span', 'lbl', 'What it may touch: '), document.createTextNode(TOUCH[id] || 'nothing until you allow it.'));
+    card.append(t);
+    const row = el('div', 'uprow');
+    const a = el('a', 'btn ghost small', 'Try it first →');
+    a.href = o.url; a.target = '_blank'; a.rel = 'noopener';
+    const add = el('button', 'btn small', 'Add to my Didy');
+    add.type = 'button';
+    add.addEventListener('click', () => addUpgrade(o, id));
+    row.append(a, add, el('span', 'free', 'Free'));
+    card.append(row);
+    box.appendChild(card);
+  }
+}
+
+// Installing asks ONE question, in plain words, before anything happens — and says what happens if
+// you decline, because a consent screen with no stated decline path is not a choice.
+function addUpgrade(o, room) {
+  const box = document.getElementById('roomOpen');
+  const ask = el('div', 'ask');
+  // The touch strings are noun phrases ("its own memory, on this computer"), so the question needs a
+  // verb in front or it reads as "Let X its own memory" — the same mistake the summary line made.
+  ask.append(el('b', null, '“' + o.name + '” would reach ' + (TOUCH[room] || 'nothing at all') + ' Allow it?'));
+  ask.append(el('p', null, 'Permissions come in sizes. This is the smallest one that lets it work. You can take it back at any time under “Set the boundary”.'));
+  ask.append(el('p', 'muted', 'If you say no, it still installs — it will just ask you to paste things in by hand instead.'));
+  const row = el('div', 'uprow');
+  const yes = el('button', 'btn small', 'Allow');
+  const no = el('button', 'btn ghost small', 'Not now');
+  yes.type = no.type = 'button';
+  yes.addEventListener('click', () => { ask.replaceChildren(el('b', null, '✓ ' + o.name + ' added to your Didy, with that permission.')); });
+  no.addEventListener('click', () => { ask.replaceChildren(el('b', null, '✓ ' + o.name + ' added, with no permission. It will ask you for input instead.')); });
+  row.append(yes, no);
+  ask.append(row);
+  box.prepend(ask);
+  ask.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+loadShop();
+
 </script>
